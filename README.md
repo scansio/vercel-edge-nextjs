@@ -1,65 +1,70 @@
----
-name: JWT Authentication
-slug: jwt-authentication
-description: Learn how to do JWT authentication at the edge.
-framework: Next.js
-useCase:
-  - Edge Functions
-  - Edge Middleware
-  - Documentation
-css: Tailwind
-deployUrl: https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fedge-middleware%2Fjwt-authentication&env=JWT_SECRET_KEY&envDescription=Random%20secret%20that'll%20be%20used%20to%20sign%20JWTs&project-name=jwt-authentication&repo-name=jwt-authentication
-demoUrl: https://edge-functions-jwt-authentication.vercel.app
-relatedTemplates:
-  - nextjs-boilerplate
-  - blog-starter-kit
-  - platforms-starter-kit
----
+# HNG12 Stage 0 API - Public Info
 
-# JWT Authentication
+## Description
 
-The example shows how to do JWT authentication at the edge using Edge Middleware and Edge Functions.
+This is a simple public API for retrieving basic information as required for HNG12 Stage 0. The API returns:
 
-## Demo
+- Your registered email on the HNG12 Slack workspace
+- The current datetime in ISO 8601 format (UTC)
+- The GitHub repository URL of this project
 
-https://edge-functions-jwt-authentication.vercel.app
+## Technology Stack
 
-Visit the demo to learn more about how it works!
+- **Framework**: Next.js (Edge Runtime)
+- **Language**: TypeScript
+- **Deployment**: Hosted on Vercel
 
-## How to Use
+## API Documentation
 
-You can choose from one of the following two methods to use this repository:
+### **Endpoint**
 
-### One-Click Deploy
-
-After [setting up your JWT secret](#set-up-environment-variables), deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fedge-middleware%2Fjwt-authentication&env=JWT_SECRET_KEY&envDescription=Random%20secret%20that'll%20be%20used%20to%20sign%20JWTs&project-name=jwt-authentication&repo-name=jwt-authentication)
-
-### Clone and Deploy
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-pnpm create next-app --example https://github.com/vercel/examples/tree/main/edge-middleware/jwt-authentication
+```plaintext
+GET https://vercel-edge-nextjs-nu.vercel.app/api/info
 ```
 
-#### Set up environment variables
+### **Response Format**
 
-Rename [`.env.example`](.env.example) to `.env.local`:
+#### **Success Response (200 OK)**
 
-```bash
-cp .env.example .env.local
+```json
+{
+  "email": "scansioquielom@gmail.com",
+  "current_datetime": "2025-01-30T09:30:00Z",
+  "github_url": "https://github.com/scansio/vercel-edge-nextjs"
+}
 ```
 
-then, update `JWT_SECRET_KEY` with your a random secret that'll be used to sign JWTs.
+## CORS Handling
 
-Next, run Next.js in development mode:
+The API allows cross-origin requests by setting the necessary headers in `next.config.js`. It supports requests from any origin.
 
-```bash
-pnpm dev
-```
+## Local Development Setup
 
-The app should be up and running at http://localhost:3000.
+1. Clone this repository:
+   ```sh
+   git clone https://github.com/scansio/vercel-edge-nextjs.git
+   ```
+2. Navigate into the project directory:
+   ```sh
+   cd vercel-edge-nextjs
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
+4. Start the development server:
+   ```sh
+   npm run dev
+   ```
+5. Open your browser and test the API:
+   ```plaintext
+   http://localhost:3000/api/info
+   ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=edge-middleware-eap) ([Documentation](https://nextjs.org/docs/deployment)).
+## Deployment
+
+This API is deployed on **Vercel**. Any changes pushed to the main branch automatically redeploy the project.
+
+## Repository
+
+GitHub Repository: [https://github.com/scansio/vercel-edge-nextjs](https://github.com/scansio/vercel-edge-nextjs)
