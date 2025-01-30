@@ -7,7 +7,7 @@ export const config = {
 
 export default async function info(req: NextRequest) {
   return jsonResponse(200, {
-    email: "your-email@example.com",
+    email: "scansioquielom@gmail.com",
     current_datetime: new Date().toISOString(),
     github_url: "https://github.com/scansio/vercel-edge-nextjs"
   })

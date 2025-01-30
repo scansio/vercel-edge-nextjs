@@ -1,6 +1,6 @@
 {
-  "name": "jwt-authentication",
-  "repository": "https://github.com/vercel/examples.git",
+  "name": "vercel-edge-nextjs",
+  "repository": "https://github.com/scansio/vercel-edge-nextjs.git",
   "license": "MIT",
   "private": true,
   "scripts": {
