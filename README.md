@@ -68,3 +68,8 @@ This API is deployed on **Vercel**. Any changes pushed to the main branch automa
 ## Repository
 
 GitHub Repository: [https://github.com/scansio/vercel-edge-nextjs](https://github.com/scansio/vercel-edge-nextjs)
+
+[Hire Node.js Developers](https://hng.tech/hire/nodejs-developers)
+HNG TECHHNG TECH
+Hire NodeJs Developers Talent | HNG Hire
+Hire the best Developers available for hire and freelance jobs anywhere in the world. Find Developers that suit your needs — chat with us now.
